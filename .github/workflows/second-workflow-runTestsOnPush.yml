@@ -20,6 +20,12 @@ jobs:
 
     - name: Install chrome
       uses: browser-actions/setup-chrome@v1
+      with:
+          chrome-version: stable
+      id: setup-chrome
+      run: |
+        echo Installed chromium version: ${{ steps.setup-chrome.outputs.chrome-version }}
+        ${{ steps.setup-chrome.outputs.chrome-path }} --version
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
