@@ -34,11 +34,15 @@ public class Chrome implements Driver {
     ChromeOptions chromeOptions = new ChromeOptions();
     // Passing the disable-infobars ChromeOption to the WebDriver, prevents Chrome from
     // displaying this notification.
-    chromeOptions.addArguments("disable-infobars");
     chromeOptions.setExperimentalOption("prefs", getChromePreferences());
-    chromeOptions.addArguments("disable-popup-blocking");
-    chromeOptions.addArguments("disable-out-of-process-pdf");
     chromeOptions.addArguments("--remote-allow-origins=*");
+    chromeOptions.addArguments("--headless=new");
+    chromeOptions.addArguments("--disable-gpu");
+    chromeOptions.addArguments("--no-sandbox");
+    chromeOptions.addArguments("--start-maximized");
+    chromeOptions.addArguments("--window-size=1920,1080");
+    chromeOptions.addArguments("--allow-insecure-localhost");
+    chromeOptions.addArguments("--disable-dev-shm-usage");
     DesiredCapabilities capability = new DesiredCapabilities();
     capability.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
     capability.setCapability(ChromeOptions.CAPABILITY, chromeOptions);

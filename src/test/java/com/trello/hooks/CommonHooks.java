@@ -15,6 +15,7 @@ public class CommonHooks {
 
   private TestContext testContext;
   private LoginSteps loginSteps;
+  public static boolean isLogged = false;
 
   /**
    * Initializes a new instance of CommonHooks class.
@@ -33,12 +34,27 @@ public class CommonHooks {
    *
    * <p>Order = 2.
    */
-  @Before(value = "@Login", order = 0)
+  @Before(value = "@Login", order = 5)
   public void login() {
-    loginSteps.navigateToLoginPage();
-    loginSteps.enterEmailTextField();
-    loginSteps.clickContinueButton();
-    loginSteps.enterPasswordTextField();
-    loginSteps.clickLoginButton();
+    if (!isLogged) {
+      loginSteps.navigateToLoginPage();
+      loginSteps.enterEmailTextField();
+      loginSteps.clickContinueButton();
+      loginSteps.enterPasswordTextField();
+      loginSteps.clickLoginButton();
+      isLogged = true;
+    } else {
+      loginSteps.navigateToDashboardPage();
+    }
+  }
+
+  /**
+   * Login to ITK dashboard as Super.
+   *
+   * <p>Order = 2.
+   */
+  @Before(value = "@NavigateToDashboard", order = 10)
+  public void navigateToDashboard() {
+    loginSteps.navigateToDashboardPage();
   }
 }

@@ -2,6 +2,8 @@ package com.trello.steps;
 
 import static com.trello.selenium.webdriver.WebDriverConfigReader.getInstance;
 
+import com.trello.hooks.CommonHooks;
+import com.trello.pages.DashboardPage;
 import com.trello.pages.common.TestContext;
 import com.trello.pages.login.LoginPage;
 import com.trello.selenium.webdriver.DriverFactory;
@@ -41,6 +43,12 @@ public class LoginSteps {
   public void navigateToLoginPage() {
     navigateToDashboard("https://trello.com/login");
     loginPage = new LoginPage();
+  }
+
+  @And("(I )navigate to the 'Dashboard' page")
+  public void navigateToDashboardPage() {
+    navigateToDashboard("https://trello.com/");
+    new DashboardPage();
   }
 
   @And("(I )enter 'Email' text field on 'Login' page")

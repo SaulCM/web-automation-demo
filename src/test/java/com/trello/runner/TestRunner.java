@@ -11,7 +11,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
     glue = {"com.trello"},
     features = {"src/test/resources/features"},
-    tags = "@TC-2")
+    tags = "@Boards")
 public class TestRunner extends AbstractTestNGCucumberTests {
 
 }

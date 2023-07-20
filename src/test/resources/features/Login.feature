@@ -1,3 +1,4 @@
+@Dashboard
 Feature: Login
 
   As a user
