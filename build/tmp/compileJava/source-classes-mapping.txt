@@ -1,0 +1,40 @@
+com/trello/selenium/browser/Edge.java
+ com.trello.selenium.browser.Edge
+com/trello/selenium/webdriver/WebDriverConfigReader.java
+ com.trello.selenium.webdriver.WebDriverConfigReader
+com/trello/pages/common/TestContext.java
+ com.trello.pages.common.TestContext
+com/trello/selenium/browser/Safari.java
+ com.trello.selenium.browser.Safari
+com/trello/constants/TestContextKeys.java
+ com.trello.constants.TestContextKeys
+com/trello/selenium/BasePage.java
+ com.trello.selenium.BasePage
+com/trello/selenium/browser/Driver.java
+ com.trello.selenium.browser.Driver
+com/trello/selenium/webdriver/BrowserFactory.java
+ com.trello.selenium.webdriver.BrowserFactory
+com/trello/selenium/utils/PropertiesReader.java
+ com.trello.selenium.utils.PropertiesReader
+com/trello/selenium/browser/BrowserType.java
+ com.trello.selenium.browser.BrowserType
+com/trello/pages/login/LoginPage.java
+ com.trello.pages.login.LoginPage
+com/trello/selenium/browser/Firefox.java
+ com.trello.selenium.browser.Firefox
+com/trello/selenium/browser/Chrome.java
+ com.trello.selenium.browser.Chrome
+com/trello/pages/DashboardPage.java
+ com.trello.pages.DashboardPage
+com/trello/selenium/WebDriverActions.java
+ com.trello.selenium.WebDriverActions
+com/trello/pages/board/BoardPage.java
+ com.trello.pages.board.BoardPage
+com/trello/selenium/utils/PropertiesManager.java
+ com.trello.selenium.utils.PropertiesManager
+com/trello/selenium/utils/PropertyInput.java
+ com.trello.selenium.utils.PropertyInput
+com/trello/selenium/webdriver/DriverFactory.java
+ com.trello.selenium.webdriver.DriverFactory
+com/trello/selenium/webdriver/SharedDriver.java
+ com.trello.selenium.webdriver.SharedDriver
