@@ -44,6 +44,16 @@ jobs:
         name: reg-results
         path: build/cucumber/reports
 
+    - name: Add Index file for report deploy
+      run: |
+        chmod +x build/cucumber/reports/cucumber-html-reports.html
+        mv build/cucumber/reports/cucumber-html-reports.html build/cucumber/reports/index.html
+
+#    - name: Download artifact
+#      uses: actions/downnloadd-artifact@v3
+#      with:
+#        name: reg-results
+
     - name: Deploy report page
       uses: peaceiris/actions-gh-pages@v3
       with:
