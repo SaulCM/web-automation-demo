@@ -9,6 +9,7 @@ jobs:
       run: echo "HEllo World"
       
   execute_second_job:
+    needs: execute_first_job
     runs-on: ubuntu-latest
     steps:
     - name: print goodbye
