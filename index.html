@@ -1,8 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.tablesorter.min.js"></script>
+  <script src="js/Chart.min.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+  <link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+  <link rel="stylesheet" href="css/font-awesome.min.css"/>
+  <link rel="shortcut icon" href="images/favicon.png"/>
+
+  <title>Cucumber Reports (no 1.0) - Features Overview</title>
+  <Body>
+    <nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse">
+          <p class="navbar-text navbar-left">Cucumber Report</p>
+          <ul class="nav navbar-nav navbar-right">
+            <li role="presentation"  class="active" ><a href="overview-features.html">Features</a></li>
+            <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+            <li role="presentation" ><a href="overview-steps.html">Steps</a></li>
+            <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="col-md-5 col-md-offset-1">
+
+        <table class="table table-bordered" id="build-info">
+          <thead>
+          <tr>
+            <th>Project</th>
+            <th>Number</th>
+            <th>Date</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="info">
+            <td>Trello</td>
+            <td>1.0</td>
+            <td>20 Jul 2023, 19:01</td>
+          </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="col-md-3 col-md-offset-2">
+      </div>
+    </div>
+  <div>
+    <div style="width: 100%; height: 20px; border-bottom: 1px solid black; text-align: center">
+      <a href="overview-features.html" style="font-size: 40px; background-color: #F3F5F6; padding: 0 10px;">
+      Features Overview <!--Padding is optional-->
+      </a>
+    </div>
+  </div>
+  </Body>
+
 </head>
-<body>
-  <a class="navbar-link" href="overview-features.html">Overview Features</a> |
-</body>
 </html>
