@@ -47,6 +47,12 @@ dependencies {
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:29.0-jre'
+
+    // Apache Log4j.
+    implementation group: 'log4j', name: 'log4j', version: '1.2.17'
+
+    // Encryptor library dependency
+    implementation 'org.jasypt:jasypt:1.9.3'
 }
 
 tasks.register('executeFeatures', Test) {
