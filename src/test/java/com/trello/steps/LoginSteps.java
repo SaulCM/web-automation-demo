@@ -5,6 +5,7 @@ import static com.trello.selenium.webdriver.WebDriverConfigReader.getInstance;
 import com.trello.pages.common.TestContext;
 import com.trello.pages.login.LoginPage;
 import com.trello.selenium.webdriver.DriverFactory;
+import com.trello.selenium.webdriver.SharedDriver;
 import io.cucumber.java.en.And;
 import org.openqa.selenium.WebDriver;
 
@@ -19,11 +20,11 @@ public class LoginSteps {
   /**
    * Initializes a new instance of SearchSectionSteps class.
    *
-   * @param testContext Test context instance, see {@link TestContext} class.
+   * @param sharedDriver Shared Driver instance, see {@link SharedDriver} class.
+   * @param testContext  Test context instance, see {@link TestContext} class.
    */
-  public LoginSteps(TestContext testContext) {
+  public LoginSteps(SharedDriver sharedDriver, TestContext testContext) {
     this.testContext = testContext;
-    this.loginPage = new LoginPage();
   }
 
   /**
@@ -39,6 +40,7 @@ public class LoginSteps {
   @And("(I )navigate to the 'Login' page")
   public void navigateToLoginPage() {
     navigateToDashboard("https://trello.com/login");
+    loginPage = new LoginPage();
   }
 
   @And("(I )enter 'Email' text field on 'Login' page")

@@ -21,7 +21,7 @@ public class PropertiesReader {
   /**
    * Class to manage the framework Properties from gradle.properties File.
    */
-  private static final PropertiesManager propertiesManager = PropertiesManager.getInstance();
+  public static final PropertiesManager propertiesManager = PropertiesManager.getInstance();
 
   /**
    * Privates constructor.

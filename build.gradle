@@ -55,21 +55,53 @@ dependencies {
     implementation 'org.jasypt:jasypt:1.9.3'
 }
 
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+//Executes Features
 tasks.register('executeFeatures', Test) {
-    doFirst {
-        useTestNG()
-        options {
-            useDefaultListeners = false
-            jvmArgs = ['-Dcucumber.options= ' +
-                               '--glue com.jalasoft.marksystems ' +
-                               '--plugin pretty ' +
-                               '--plugin json:build/cucumber/cucumber.json ' +
-                               '--plugin rerun:build/cucumber/rerun.txt ' +
-                               cucumberOptions]
+    useTestNG()
+    options {
+        useDefaultListeners = false
+        jvmArgs = ['-Dcucumber.glue=com.trello']
+        jvmArgs = ['-Dcucumber.features=src/test/resources/features/']
+        jvmArgs = ['-Dcucumber.plugin=pretty,' +
+                           'html:build/cucumber/cucumber-report.html,' +
+                           'json:build/cucumber/cucumber.json,' +
+                           'rerun:build/cucumber/rerun.txt']
+    }
+    ignoreFailures = true
+    scanForTestClasses = false
+    testLogging.showStandardStreams = true
+}
+
+task cucumberCli() {
+    dependsOn assemble, testClasses
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = [
+                    '--plugin', 'pretty',
+                    '--plugin', 'html:build/cucumber/cucumber-report.html',
+                    '--plugin', 'json:build/cucumber/cucumber.json',
+                    '--plugin', 'rerun:build/cucumber/rerun.txt',
+                    '--glue', 'com.trello',
+                    'src/test/resources/features']
+            ignoreExitValue = true
         }
     }
-    scanForTestClasses = false
-    ignoreFailures = true
+}
+
+cucumberReports {
+    projectNameOverride = 'Trello'
+    outputDir = file('build/cucumber/reports')
+    buildId = '1.0'
+    reports = files('build/cucumber/cucumber.json')
 }
 
 application {

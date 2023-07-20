@@ -9,9 +9,9 @@ import io.cucumber.testng.CucumberOptions;
  * @author Saul Caspa
  */
 @CucumberOptions(
-    glue = {"com.jalasoft.marksystems"},
+    glue = {"com.trello"},
     features = {"src/test/resources/features"},
-    tags = "@TC-00001")
+    tags = "@TC-2")
 public class TestRunner extends AbstractTestNGCucumberTests {
 
 }
