@@ -1,0 +1,16 @@
+name: Sequential jobs
+on: workflow_dispatch
+
+jobs:
+  execute_first_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: print greeting
+      run: echo "HEllo World"
+      
+  execute_second_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: print goodbye
+      run: echo "Goodbye"
+ 
