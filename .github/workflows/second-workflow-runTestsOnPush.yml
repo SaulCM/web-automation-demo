@@ -46,7 +46,7 @@ jobs:
 
     - name: Add Index file for report deploy
       run: |
-        chmod +x build/cucumber/reports/cucumber-html-reports.html
+        chmod +x ./build/cucumber/reports/cucumber-html-reports.html
         mv ./build/cucumber/reports/cucumber-html-reports.html ./build/cucumber/reports/index.html
 
 #    - name: Download artifact
