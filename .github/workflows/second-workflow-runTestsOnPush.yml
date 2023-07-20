@@ -7,20 +7,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: download repository
-        uses: actions/checkout@v3
-      - name: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: 11
-      - name: install chrome
-        uses: browser-actions/setup-chrome@v1
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-      - name: run tests
-        run: ./gradlew clean executeFeatures -PcucumberOptions="--tags @Boards"
-      - name: Deploy report page
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/cucumber/reports/cucumber-html-reports
+    - name: download repository
+      uses: actions/checkout@v3
+    - name: set Java 11
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: 11
+    - name: install chrome
+      uses: browser-actions/setup-chrome@v1
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    - name: run tests
+      run: ./gradlew clean executeFeatures -PcucumberOptions="--tags @Boards"
+    - name: Deploy report page
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build/cucumber/reports/cucumber-html-reports
