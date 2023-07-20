@@ -38,6 +38,12 @@ jobs:
     - name: Run tests on push
       run: ./gradlew clean executeFeatures -PcucumberOptions="--tags @Boards"
 
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: reg-results
+        path: build/cucumber/reports
+
     - name: Deploy report page
       uses: peaceiris/actions-gh-pages@v3
       with:
