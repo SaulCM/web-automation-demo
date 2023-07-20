@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 /**
  * Class containing static methods to add, get or remove the driver of a thread.
  *
- * @author Marcelo Guzman
+ * @author Saul Caspa
  */
 public class DriverFactory {
 

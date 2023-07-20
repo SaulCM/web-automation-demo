@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 /**
  * Initializes the Selenium Web Driver.
  *
- * @author Marcelo Guzman
+ * @author Saul Caspa
  */
 public interface Driver {
 

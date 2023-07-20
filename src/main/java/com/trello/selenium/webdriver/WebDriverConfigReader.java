@@ -3,9 +3,10 @@ package com.trello.selenium.webdriver;
 import static com.trello.selenium.utils.PropertyInput.BROWSER_TYPE;
 import static com.trello.selenium.utils.PropertyInput.EXPLICIT_WAIT_TIME;
 import static com.trello.selenium.utils.PropertyInput.IMPLICIT_WAIT_TIME;
+import static com.trello.selenium.utils.PropertyInput.PASSWORD;
 import static com.trello.selenium.utils.PropertyInput.SLEEP_TIME;
+import static com.trello.selenium.utils.PropertyInput.USER_EMAIL;
 import static java.lang.Integer.parseInt;
-import static org.apache.log4j.PropertyConfigurator.configure;
 
 import com.trello.selenium.utils.PropertiesManager;
 import org.apache.log4j.Logger;
@@ -13,7 +14,7 @@ import org.apache.log4j.Logger;
 /**
  * Class to manage the configuration of the Web Driver.
  *
- * @author Marcelo Guzman
+ * @author Saul Caspa
  */
 public class WebDriverConfigReader {
 
@@ -50,7 +51,7 @@ public class WebDriverConfigReader {
    * Initializes according to config file.
    */
   private void init() {
-    configure("log.properties");
+//    configure("log.properties");
     log.info("WebDriverConfigReader initialize: Reading driver configuration settings.");
     browser = properties.getProperty(BROWSER_TYPE);
     log.info("Browser name --> ".concat(browser));
@@ -93,5 +94,23 @@ public class WebDriverConfigReader {
    */
   public int getSleepTime() {
     return sleepTime;
+  }
+
+  /**
+   * Gets the user email.
+   *
+   * @return the user email.
+   */
+  public String getUserEmail() {
+    return properties.getProperty(USER_EMAIL);
+  }
+
+  /**
+   * Gets the user password.
+   *
+   * @return the password.
+   */
+  public String getPassword() {
+    return properties.getProperty(PASSWORD);
   }
 }

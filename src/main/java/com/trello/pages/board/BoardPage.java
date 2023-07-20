@@ -1,4 +1,4 @@
-package com.trello.pages.login;
+package com.trello.pages.board;
 
 import static com.trello.selenium.WebDriverActions.getLocator;
 
