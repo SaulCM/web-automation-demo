@@ -7,18 +7,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: download repository
+    - name: Download repository
       uses: actions/checkout@v3
-    - name: set Java 11
+    - name: Set Java 11
       uses: actions/setup-java@v3
       with:
-        distribution: 'temurin'
+        distribution: 'adopt'
         java-version: 11
-    - name: install chrome
+    - name: Install chrome
       uses: browser-actions/setup-chrome@v1
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-    - name: run tests
+    - name: Run tests on push
       run: ./gradlew clean executeFeatures -PcucumberOptions="--tags @Boards"
     - name: Deploy report page
       uses: peaceiris/actions-gh-pages@v3
