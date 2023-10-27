@@ -17,24 +17,6 @@ jobs:
     - name: Download repository
       uses: actions/checkout@v3
 
-#    - name: Set Java 11
-#      uses: actions/setup-java@v3
-#      with:
-#        distribution: 'adopt'
-#        java-version: 11
-#        server-id: github
-#        settings-path: ${{ github.workspace }}
-
-#    - name: Install chrome
-#      uses: browser-actions/setup-chrome@v1
-#      run: |
-#        set -ex
-#        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-#        sudo apt install ./google-chrome-stable_current_amd64.deb
-
-#    - name: Grant execute permission for gradlew
-#      run: chmod +x gradlew
-
     - name: Run tests on push
       run: ./gradlew clean executeFeatures -PcucumberOptions="--tags @Boards"
 
@@ -47,11 +29,6 @@ jobs:
       with:
         name: reg-results
         path: build/cucumber/reports
-
-#    - name: Download artifact
-#      uses: actions/downnloadd-artifact@v3
-#      with:
-#        name: reg-results
 
     - name: Deploy report page
       uses: peaceiris/actions-gh-pages@v3
