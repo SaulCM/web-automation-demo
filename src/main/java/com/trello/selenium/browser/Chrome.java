@@ -36,7 +36,7 @@ public class Chrome implements Driver {
     // displaying this notification.
     chromeOptions.setExperimentalOption("prefs", getChromePreferences());
     chromeOptions.addArguments("--remote-allow-origins=*");
-    chromeOptions.addArguments("--headless=new");
+//    chromeOptions.addArguments("--headless=new");
     chromeOptions.addArguments("--disable-gpu");
     chromeOptions.addArguments("--no-sandbox");
     chromeOptions.addArguments("--start-maximized");
