@@ -40,7 +40,7 @@ jobs:
 
     - name: Add Index file for report deploy
       run:
-        Rename-Item -Path "/build/cucumber/reports/cucumber-html-reports/overview-features.html" -NewName "index.html"
+        Rename-Item -Path "F:/actions-runner/_work/web-automation-demo/web-automation-demo/build/cucumber/reports/cucumber-html-reports/overview-features.html" -NewName "index.html"
 
     - name: Upload artifact
       uses: actions/upload-artifact@v3
