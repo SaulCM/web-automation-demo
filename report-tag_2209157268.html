@@ -76,7 +76,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>Trello</td>
         <td>1.0</td>
-      <td>13 Aug 2023, 22:26</td>
+      <td>27 Oct 2023, 00:46</td>
     </tr>
   </tbody>
 </table>
@@ -129,19 +129,19 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">@TC-3</td>
-          <td      class="passed"    >7</td>
-          <td >0</td>
-          <td >0</td>
+          <td      class="passed"    >3</td>
+          <td      class="failed"    >1</td>
+          <td     class="skipped"   >3</td>
           <td >0</td>
           <td >0</td>
           <td class="total">7</td>
 
-          <td  class="passed"    >1</td>
           <td >0</td>
+          <td  class="failed"    >1</td>
           <td class="total">1</td>
 
-          <td class="duration" data-value="1695756000">1.695</td>
-          <td class="passed">Passed</td>
+          <td class="duration" data-value="31227772500">31.227</td>
+          <td class="failed">Failed</td>
         </tr>
         </tbody>
 
@@ -185,12 +185,12 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">1.695</span>
+  <span class="lead-duration duration">31.227</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Scenario</span>
   <span class="name">A user can open a board with cards</span>
 
@@ -201,7 +201,7 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-1" class="collapse collapsable-details ">
+  <div id="element-1" class="collapse collapsable-details  in ">
 
 
   <div class="inner-level hooks-element-before">
@@ -223,7 +223,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
               <span class="location name">com.trello.hooks.CommonHooks.login()</span>
 
-  <span class="lead-duration duration">1.399</span>
+  <span class="lead-duration duration">1.105</span>
 
           </div>
 
@@ -240,9 +240,9 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-3">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-3">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
@@ -252,7 +252,7 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-3" class="inner-level collapse collapsable-details ">
+  <div id="steps-3" class="inner-level collapse collapsable-details  in ">
       <div class="step">
 
 
@@ -260,7 +260,7 @@ $(document).ready(function() {
   <span class="keyword indention">Given</span>
   <span class="name">I click <span class="argument">'Study Plan'</span> board card on 'Dashboard' page</span>
 
-  <span class="lead-duration duration">0.281</span>
+  <span class="lead-duration duration">0.174</span>
 
 </div>
 
@@ -287,7 +287,7 @@ $(document).ready(function() {
   <span class="keyword indention">Then</span>
   <span class="name">the 'Board' button on 'Boards' page should be displayed</span>
 
-  <span class="lead-duration duration">1.170</span>
+  <span class="lead-duration duration">0.795</span>
 
 </div>
 
@@ -314,7 +314,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">the 'Visibility' button on 'Boards' page should be displayed</span>
 
-  <span class="lead-duration duration">0.065</span>
+  <span class="lead-duration duration">0.030</span>
 
 </div>
 
@@ -337,11 +337,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And failed">
   <span class="keyword indention">And</span>
   <span class="name">the <span class="argument">'To Do'</span> list on 'Boards' page should be displayed</span>
 
-  <span class="lead-duration duration">0.047</span>
+  <span class="lead-duration duration">30.227</span>
 
 </div>
 
@@ -349,6 +349,24 @@ $(document).ready(function() {
 
 
 
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-4">
+          <a>java.lang.AssertionError:</a>
+      </div>
+      <div id="msg-4" class="collapse collapsable-details  in ">
+        <pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at com.trello.steps.BoardSteps.listWithNameShouldBeDisplayed(BoardSteps.java:36)
+	at &#10045;.the 'To Do' list on 'Boards' page should be displayed(file:///F:/actions-runner/_work/web-automation-demo/web-automation-demo/src/test/resources/features/Boards.feature:22)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -364,11 +382,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">the <span class="argument">'Lecture'</span> list on 'Boards' page should be displayed</span>
 
-  <span class="lead-duration duration">0.043</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -391,11 +409,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">the <span class="argument">'Test Practice'</span> list on 'Boards' page should be displayed</span>
 
-  <span class="lead-duration duration">0.044</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -418,11 +436,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">the <span class="argument">'Finished'</span> list on 'Boards' page should be displayed</span>
 
-  <span class="lead-duration duration">0.042</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
